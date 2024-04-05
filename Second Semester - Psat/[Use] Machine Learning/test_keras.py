@@ -70,7 +70,7 @@ tuner = kt.Hyperband(
     build_model,
     objective=kt.Objective("val_mean_absolute_error", direction="min"),
     factor=3,
-    max_epochs=100, #Max epoch to train for each model
+    max_epochs=4, #Max epoch to train for each model
     directory='my_directory', 
     project_name='test_f'
 )
@@ -79,7 +79,7 @@ tuner = kt.Hyperband(
 stop_early = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=5)
 
 tuner.search(x_train, y_train,
-             epochs=100, #Trial
+             epochs=4, #Trial
              validation_split=0.1, 
              callbacks=[stop_early])
 

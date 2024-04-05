@@ -173,7 +173,8 @@ scaler_y = load("file_02-2 scaler_y.joblib")
 # Specified model need to run
 #names_bestpar = ["DT", "RF", "XGB", "KNN"]
 names_bestpar = ["XGB"]
-models_bestpar = [XGB]
+#models_bestpar = [XGB]
+models_bestpar = [Linear_default]  ## TEMPORARY ##
 
 # Run Training Model
 all_result_model_bestpar = []
@@ -257,10 +258,10 @@ for i in range(len(names_bestpar)):
     i_show = i+1
     path_model = f"file_03-1-{i_show} {names_bestpar[i]}.joblib"
     print(path_model)
-    dump(all_result_model_bestpar[i], path_model)
+    #dump(all_result_model_bestpar[i], path_model)
     
 # Export Prediction Table
-train_predict_table.to_csv("csv_03-1-1 Predict Table - train XGB.csv")
-test_predict_table.to_csv("csv_03-1-2 Predict Table - test XGB.csv")
+#train_predict_table.to_csv("csv_03-1-1 Predict Table - train XGB.csv")
+#test_predict_table.to_csv("csv_03-1-2 Predict Table - test XGB.csv")
 
 # Export Evaluation

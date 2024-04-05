@@ -64,7 +64,7 @@ def SVM_default(x_train, y_train):
   return svr
 #%% Import Data
 #df = pd.read_csv("csv_01 Psat_[X]_ABCTminTmaxC1-12.csv")
-df_original = pd.read_csv("../Refactor Code/csv-01-0 Psat-1800.csv")
+df_original = pd.read_csv("../[Use] Machine Learning/csv-01-0 Psat-1800.csv")
 filter1 = df_original["SMILES"].str.contains("\+")
 #filter2 = df["SMILES"].str.contains("\-")
 filter3 = df_original["SMILES"].str.contains("\.")
@@ -120,7 +120,8 @@ def generate_FP(MF_bit, MF_radius, SMILES_data, T_data):
 #%% Set up Fingerprint
 # Parameter for Generate Morgan Fingerprint
 all_MF_radius = [2,3,4]
-all_MF_bit = [256, 1024, 2048, 2**12]
+#all_MF_bit = [256, 1024, 2048, 2**12]
+all_MF_bit = [2**1, 2**2]  ## TEMPORARY ##
 
 MF_loop = list(itertools.product(all_MF_radius, all_MF_bit))
 
@@ -245,17 +246,3 @@ plt.show(g)
 #temp_inport = temp_export.groupby(['r-Bits set up', 'RMSE', 'MAE', 'R2', 'MF_radius','MF_Bits']).agg(list)
 #temp_import = temp_inport.reset_index()
 
-#%% Visualization from temp_import
-
-#%%
-
-# =============================================================================
-# import requests
-# url = 'https://notify-api.line.me/api/notify'
-# token = '3CfMWfczpal9Zye6bD72a8Ud6FWOODnBHQZHIWM1YU4'
-# headers = {'content-type':'application/x-www-form-urlencoded','Authorization':'Bearer '+token}
-# 
-# msg = f'Inspect Fingerpirnt Done'
-# r = requests.post(url, headers=headers, data = {'message':msg})
-# print (r.text)
-# =============================================================================

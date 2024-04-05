@@ -169,4 +169,4 @@ f7 = pd.concat([f2, f6])
 df_func = pd.merge(df_CHON, f7, on="SMILES")
 #%% Split Data
 df_func = df_func.drop_duplicates(subset=['SMILES']).reset_index(drop=True)
-df_func.to_csv("Tb_Data_CHON_Func_Group.csv")
+#df_func.to_csv("Tb_Data_CHON_Func_Group.csv")

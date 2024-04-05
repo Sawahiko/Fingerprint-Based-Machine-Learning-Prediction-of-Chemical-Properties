@@ -27,7 +27,8 @@ old_df = pd.DataFrame({
     })
 
 # %% Option Many Bit
-MF_bit_s = [2**8, 2**9, 2**10, 2**11, 2**12, 2**13]
+#MF_bit_s = [2**8, 2**9, 2**10, 2**11, 2**12, 2**13]
+MF_bit_s = [2**0, 2**1, 2**2]    ## TEMPORARY ###
 MF_radius_s = [2, 3, 4, 5, 6]
 
 # =============================================================================
@@ -80,48 +81,8 @@ for MF_radius in MF_radius_s:
             datafram_i = datafram_i.T
             X_data_fp.append(datafram_i)
         x_data_fp = pd.concat(X_data_fp, ignore_index=True)
-        sel_f = x_data_fp.sort_values(by=1, ascending=False, inplace=False)
-        print(sel_f[1])
-        #print(X_data_excel["SMILES"][3421])
+              
         y_data_fp = Y_data.copy()
-# =============================================================================
-#         if MF_radius == 2:
-#             if MF_bit == 1024:
-#                 K = 440
-#             elif MF_bit == 2048:
-#                 K = 668
-#             elif MF_bit == 4096:
-#                 K = 893
-#         elif MF_radius == 3:
-#             if MF_bit == 1024:
-#                 K = 556
-#             elif MF_bit == 2048:
-#                 K = 824
-#             elif MF_bit == 4096:
-#                 K = 1202
-#         elif MF_radius == 4:
-#             if MF_bit == 1024:
-#                 K = 668
-#             elif MF_bit == 2048:
-#                 K = 972
-#             elif MF_bit == 4096:
-#                 K = 1417
-#         k_best = SelectKBest(f_regression, k=K) # Select the top 200 features
-#         x_new = k_best.fit_transform(x_data_fp, y_data_fp)
-# =============================================================================
-
-# =============================================================================
-#         scores = k_best.scores_
-# 
-#         # Get the names of the selected features
-#         selected_features = k_best.get_support()
-#         feature_names = x_data_fp.columns
-# 
-#         # Print the scores of the selected features
-#         for i, feature_name in enumerate(feature_names):
-#             if selected_features[i]:
-#                 print(f"Feature {feature_name}: {scores[i]:.2f}")
-# =============================================================================
         
         # %%
         # Train-test_Modeling & Cross Validation Modeling

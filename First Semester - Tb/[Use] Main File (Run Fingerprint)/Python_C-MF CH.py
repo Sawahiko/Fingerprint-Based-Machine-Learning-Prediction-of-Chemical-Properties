@@ -34,7 +34,7 @@ old_df = pd.DataFrame({
     })
 
 import itertools
-MF_bit_s = [2**1] ; MF_radius_s = [3]
+MF_bit_s = [2**12] ; MF_radius_s = [3]
 
 def XGB_Best(x_train, y_train):
     xgb = XGBRegressor(random_state=42).fit(x_train, y_train)    
@@ -126,8 +126,8 @@ for i in MF_model_list:
                           'Actual': y_test_fp, 'Predict': y_pred_test})
     df4_r = pd.DataFrame({'SMIELS_TRAIN':train["SMILES"],
                           'Actual': y_train_fp, 'Predict': y_pred_train})
-    Export(df3_r, f"Result & Visual/CH 2024-03-23/{model_name}_Test_Tb_Value_2.csv")
-    Export(df4_r, f"Result & Visual/CH 2024-03-23/{model_name}_Train_Tb_Value_2.csv")
+    #Export(df3_r, f"Result & Visual/CH 2024-03-23/{model_name}_Test_Tb_Value_2.csv")
+    #Export(df4_r, f"Result & Visual/CH 2024-03-23/{model_name}_Train_Tb_Value_2.csv")
     #%% Prepare Export 2 - FP Insepction
     if(j>0):
         old_df = df_combine.copy()
@@ -137,6 +137,6 @@ for i in MF_model_list:
     df_combine = pd.concat([old_df, new_df], ignore_index=True)
         
 #%% Prepare Export 3 - FP Insepction
-Export(df_combine, f"Result & Visual/CH 2024-03-23/{Name_model}_2.csv")
+#Export(df_combine, f"Result & Visual/CH 2024-03-23/{Name_model}_2.csv")
 
 

@@ -130,7 +130,7 @@ for i in range(len(final4)):
     #print(i)
     temp = final4.iloc[i]
     rmse_predict = temp["RMSE"]
-    count, p = do_plot(rmse_predict, True, count, thereshold=thereshold_input, is_second_cond=False)
+    count, p = do_plot(rmse_predict, False, count, thereshold=thereshold_input, is_second_cond=False)
     list_pic_not_pass.append(p)
 
 list_pic_pass = []    
@@ -138,21 +138,23 @@ for i in range(len(final4)):
     #print(i)
     temp = final4.iloc[i]
     rmse_predict = temp["RMSE"]
-    count,p = do_plot(rmse_predict, True, count, thereshold=thereshold_input, is_second_cond=True)
+    count,p = do_plot(rmse_predict, False, count, thereshold=thereshold_input, is_second_cond=True)
     list_pic_pass.append(p)
     
-#%%
-i=0
-for img in list_pic_not_pass:
-    i+=1
-    if img:
-        img.savefig(f"test_img/pic_not_pass_{i}")
-#%%
-i=0
-for img in list_pic_pass:
-    i+=1
-    if img:
-        img.savefig(f"test_img/pic_pass_{i}")
+# =============================================================================
+# #%%
+# i=0
+# for img in list_pic_not_pass:
+#     i+=1
+#     if img:
+#         img.savefig(f"test_img/pic_not_pass_{i}")
+# #%%
+# i=0
+# for img in list_pic_pass:
+#     i+=1
+#     if img:
+#         img.savefig(f"test_img/pic_pass_{i}")
+# =============================================================================
 #%%
 final5 = final4[["SMILES", "ln_Psat_Actual (Pa)_Cal", "ln_Psat_Pred (Pa)_Cal",
                  "ln_Psat_Actual (Pa)", "ln_Psat_Pred (Pa)"]]

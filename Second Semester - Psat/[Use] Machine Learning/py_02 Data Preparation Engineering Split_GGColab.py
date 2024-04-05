@@ -67,7 +67,8 @@ print(df2_train.sort_values(by="Vapor_Presssure"))
 
 # Fingerprint
 # Parameter for Generate Morgan Fingerprint
-MF_radius = 4;   MF_bit = 4096
+#MF_radius = 4;   MF_bit = 4096
+MF_radius = 4;   MF_bit = 4   ## TEMPORARY ##
 
 # Generate Fingerprint from SMILE
 X_data_use = X_data.copy()
@@ -174,9 +175,9 @@ from joblib import dump, load
 #df2_train.to_csv("csv_02-1 df_train.csv")
 #df2_test.to_csv("csv_02-2 df_test.csv")
 
-pd.DataFrame(x_train_fp).to_csv("/content/SMILE_to_Feature/Second Semester/Refactor Code/csv_02-3 std_x_train.csv")
+#pd.DataFrame(x_train_fp).to_csv("/content/SMILE_to_Feature/Second Semester/Refactor Code/csv_02-3 std_x_train.csv")
 #pd.DataFrame(y_train_fp).to_csv("csv_02-4 std_y_train.csv")
-pd.DataFrame(x_test_fp).to_csv("/content/SMILE_to_Feature/Second Semester/Refactor Code/csv_02-5 std_x_test.csv")
+#pd.DataFrame(x_test_fp).to_csv("/content/SMILE_to_Feature/Second Semester/Refactor Code/csv_02-5 std_x_test.csv")
 #pd.DataFrame(y_test_fp).to_csv("csv_02-6 std_y_test.csv")
 
 ##dump(scale_x, "file_02-1 scaler_x.joblib")
